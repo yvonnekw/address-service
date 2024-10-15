@@ -2,6 +2,7 @@ package com.auction.address_service.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.validation.annotation.Validated;
 
 
 @AllArgsConstructor
@@ -10,6 +11,7 @@ import lombok.*;
 @Setter
 @Getter
 @Entity
+@Validated
 @Table(name = "address")
 public class Address {
 

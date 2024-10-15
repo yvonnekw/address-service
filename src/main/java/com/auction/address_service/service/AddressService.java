@@ -7,8 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.auction.common.dto.AddressRequest;
-import com.auction.common.dto.AddressResponse;
+import com.auction.address_service.dto.AddressRequest;
+import com.auction.address_service.dto.AddressResponse;
 
 import java.util.List;
 

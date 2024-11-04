@@ -12,20 +12,19 @@ import org.springframework.validation.annotation.Validated;
 @Getter
 @Entity
 @Validated
-@Table(name = "address")
+@Table(name = "addresses")
 public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long addressId;
-    private Long userId;        // Reference to the UserService's User ID
-
+    private Long userId;
     private String street;
     private String city;
     private String state;
     private String postalCode;
     private String country;
 
-    private boolean isBillingAddress;   // Optional: To differentiate billing vs shipping address
-    private boolean isShippingAddress;  // Optional: To differentiate billing vs shipping address
+    private boolean isBillingAddress;
+    private boolean isShippingAddress;
 }

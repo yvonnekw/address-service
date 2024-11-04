@@ -33,14 +33,32 @@ public class AddressService {
                 .isShippingAddress(addressRequest.isShippingAddress())
                 .build();
         addressRepository.save(address);
-        log.info("Address with id {} is saved. ", address.getAddressId());
-        return new AddressResponse(address.getAddressId(), address.getUserId(), address.getStreet(), address.getCity(), address.getState(), address.getPostalCode(), address.getCountry(), address.isShippingAddress(), address.isBillingAddress());
+        log.info("Address with id {} is saved. ", address.getAddressId() + " user id " + address.getUserId());
+        return new AddressResponse(
+                address.getAddressId(),
+                address.getUserId(),
+                address.getStreet(),
+                address.getCity(),
+                address.getState(),
+                address.getPostalCode(),
+                address.getCountry(),
+                address.isShippingAddress(),
+                address.isBillingAddress());
     }
 
     public List<AddressResponse> getAllAddresses() {
         return addressRepository.findAll()
                 .stream()
-                .map(address -> new AddressResponse(address.getUserId(), address.getAddressId(), address.getStreet(), address.getCity(), address.getState(), address.getCountry(), address.getPostalCode(), address.isBillingAddress(), address.isShippingAddress()))
+                .map(address -> new AddressResponse(
+                        address.getUserId(),
+                        address.getAddressId(),
+                        address.getStreet(),
+                        address.getCity(),
+                        address.getState(),
+                        address.getCountry(),
+                        address.getPostalCode(),
+                        address.isBillingAddress(),
+                        address.isShippingAddress()))
                 .toList();
     }
 }
